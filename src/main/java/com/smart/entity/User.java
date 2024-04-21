@@ -21,8 +21,16 @@ public class User {
     private String imgUrl;
     @Column(length = 500)
     private String about;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY , mappedBy = "user")
     private List<contact> contacts= new ArrayList<>();
+
+    public List<contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(List<contact> contacts) {
+        this.contacts = contacts;
+    }
 
     public int getId() {
         return id;

@@ -10,6 +10,10 @@ public class UserController {
     public String home(){
         return "home";
     }
+    @RequestMapping("/navbar")
+    public String navbar(){
+        return "navbar";
+    }
 
 
 
